@@ -9,14 +9,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSfE-pRY5C9lKB8q4LWmgCIQIKLc-OPEKL0A&s" alt="earth">
 </head>
 
 <body>
     <header>
+        <div class="header-content">
         <h1>Where in the world?</h1>
+        <button>Black theme</button>
+        </div>
     </header>
     <main id="root">
-
+        <div class="filters">
+            <input type="text" id="query" placeholder="Search country">
+            <select name="region" id="region">
+                <option value="">Filter by region</option>
+                <option value="Europe">Europe</option>
+                <option value="America">America</option>
+                <option value="Asia">Asia</option>
+                <option value="Africa">Africa</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+        </div>
     </main>
     <script type="module" src="dom-utils.js"></script>
     <script type="module" src="app.js"></script>
