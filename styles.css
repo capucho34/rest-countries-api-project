@@ -1,0 +1,52 @@
+:root {
+    --color-text: hsl(200, 15%, 8%);
+    --color-input: hsl(0, 0%, 52%);
+    --color-background: hsl(0, 0%, 98%);
+    --color-white: hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main, header {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+body {
+    color:var(--color-text);
+    font-size:14px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    list-style:none;
+    gap:70px
+}
+
+li {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 1px 9px 24px 0px rgba(66, 68, 90, 1);
+}
+
+li img {
+    aspect-ratio: 160/98;
+    width: 100%;
+}
+
+.info-container {
+    padding: 30px 20px; 
+}
+
+.country-name {
+    font-size:18px;
+    display:block;
+    margin-bottom: 10px;
+
+}
