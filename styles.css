@@ -12,19 +12,23 @@
 }
 
 .filters {
+}
+
+.filter.active {
     display:flex;
     justify-content: space-between;
     margin-bottom: 30px;
+    margin: 20px;
 }
 
 #query {
     border:none;
     background-color: var(--color-background);
-    box-shadow: 1px 0px 12px 1px rgba(66, 68, 90, 1);
+    box-shadow: 2px 2px 2px 2px rgba(66, 68, 90, 1);
     padding: 15px 30px;
 }
 
-main {
+.filters, main {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 32px;
@@ -60,6 +64,11 @@ li {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 1px 9px 24px 0px rgba(66, 68, 90, 1);
+}
+
+li a {
+    text-decoration: none;
+    color: var(--color-text);
 }
 
 li img {
@@ -99,3 +108,4 @@ li img {
         grid-template-columns: 1fr;
     }
 }
+

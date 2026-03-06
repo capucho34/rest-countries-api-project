@@ -25,7 +25,10 @@ const createFlageImgElement = (country) => {
 const createCountryItemElement = (country) => {
     const countryElement = document.createElement("li");
 
-    countryElement.appendChild(createFlageImgElement(country));
+    const anchorElement = document.createElement("a");
+    anchorElement.href = `?country=${country.code}`;
+
+    anchorElement.appendChild(createFlageImgElement(country));
 
     const infoContainerElement = document.createElement("div");
     infoContainerElement.classList.add("info-container");
@@ -48,7 +51,9 @@ const createCountryItemElement = (country) => {
         createInfoElement("Capital: ", country.capital)
     );
 
-    countryElement.appendChild(infoContainerElement);
+    anchorElement.appendChild(infoContainerElement);
+
+    countryElement.appendChild(anchorElement);
 
     return countryElement;
 
@@ -62,7 +67,18 @@ const createListElement = (countries) => {
     return ListElement;
 };
 
+const creatDetailElement = (country) => {
+
+};
 export const renderCountriesList = (countries) => {
     const rootElement = document.querySelector("#root");
+    rootElement.innerHTML = "";
     rootElement.appendChild(createListElement(countries));
 };
+
+export const rendercountryDetails = (country) => {
+    const rootElement = document.querySelector("#root");
+    rootElement.innerHTML = "";
+    rootElement.appendChild(creatDetailElement(country));
+};
+    
