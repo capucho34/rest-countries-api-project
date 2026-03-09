@@ -10,6 +10,9 @@ export const renderDashboard = () => {
         .then((res) => res.json())
         .then((countriesRaw) => {
             countries = countriesRaw.map((country) => {
+                if (country.name.common === "Australia") {
+                    console.log(country.region);
+                }
                 return {
                     capital: country.capital && country.capital[0],
                     population: country.population.toLocaleString(),
@@ -19,12 +22,10 @@ export const renderDashboard = () => {
                     flagUrl: country.flags.png,
                 };
             });
-            console.log(countries);
             renderCountriesList(countries);
         });
 
     const filterDataAndRenderCountriesList = () => {
-        if (!countries) return;
         const filteredCountries = countries.filter((country) => {
             return (
                 country.name.toLowerCase().includes(query) &&
@@ -35,12 +36,12 @@ export const renderDashboard = () => {
         renderCountriesList(filteredCountries);
     };
 
-    document.querySelector('#query').addEventListener("input", (e) => {
+    document.querySelector("#query").addEventListener("input", (e) => {
         query = e.target.value.toLowerCase().trim();
         filterDataAndRenderCountriesList();
     });
 
-    document.querySelector('#region').addEventListener("change", (e) => {
+    document.querySelector("#region").addEventListener("change", (e) => {
         region = e.target.value;
         filterDataAndRenderCountriesList();
     });
